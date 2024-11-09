@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.serviceimpl;
+
+public class ContactServiceImpl {
+
+}

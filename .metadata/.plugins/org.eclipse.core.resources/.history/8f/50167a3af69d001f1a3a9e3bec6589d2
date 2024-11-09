@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.responseDto;
+
+public class ErrorResponseDto {
+
+}

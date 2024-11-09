@@ -1,0 +1,64 @@
+package com.buildbot.contactsmanagement.serviceimpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.buildbot.contactsmanagement.entity.Contact;
+import com.buildbot.contactsmanagement.exception.ResourceAlreadyExistException;
+import com.buildbot.contactsmanagement.repository.ContactRepository;
+import com.buildbot.contactsmanagement.requestDto.ContactDto;
+import com.buildbot.contactsmanagement.responseDto.ContactResponseDto;
+import com.buildbot.contactsmanagement.service.ContactService;
+
+@Service
+public class ContactServiceImpl implements ContactService 
+{
+	private ContactRepository contactRepository;
+
+	@Override
+	public ContactResponseDto createNewResource(ContactDto contactDto) {
+		
+		Optional<Contact> contact = contactRepository.findByEmail(contactDto.getEmail());
+		
+		if(contact.isPresent())
+		{
+			throw new ResourceAlreadyExistException("Email Already Exist");
+		}
+		
+		
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto updateExistingResource(Long contactId, ContactDto contactDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ContactResponseDto> fetchAllContacts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto fetchContactByPhoneNo(String phoneNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto fetchContactByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto fetchContactByContactId(Long contactId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

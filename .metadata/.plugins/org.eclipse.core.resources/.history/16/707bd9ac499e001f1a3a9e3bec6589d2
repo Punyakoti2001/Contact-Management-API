@@ -1,0 +1,39 @@
+package com.buildbot.contactsmanagement.requestDto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@RequiredArgsConstructor
+public class ContactDto {
+
+	@NotBlank
+	@Pattern(regexp = "[a-zA-Z ]+")
+	@Size(max = 50)
+	private String firstName;
+
+
+	@NotBlank
+	@Pattern(regexp = "[a-zA-Z ]+")
+	@Size(max = 50)
+	private String lastName;
+
+	
+	@NotBlank(message = "Email cannot be blank")
+	@Email(message = "Invalid email format")
+	@Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$", message = "Email should me in the given format ^[A-Za-z0-9+_.-]+@(.+)$")
+	private String email;
+
+	@NotBlank(message = "phoneNo cannot be blank")
+	@Pattern(regexp = "(^\\+91[6-9]\\d{9}$)|(^[6-9]\\d{9}$)|(^\\+[0-9]{1,2}[0-9]{10,}$)", message = "phoneNo must be match to the given format (^\\\\+91[6-9]\\\\d{9}$)|(^[6-9]\\\\d{9}$)|(^\\\\+[0-9]{1,2}[0-9]{10,}$)")
+	private String phoneNo;
+
+}

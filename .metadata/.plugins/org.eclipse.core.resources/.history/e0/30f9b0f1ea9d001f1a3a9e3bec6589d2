@@ -1,0 +1,26 @@
+package com.buildbot.contactsmanagement.requestDto;
+
+import com.buildbot.contactsmanagement.entity.Contact;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Size;
+
+public class AddressDto {
+
+	private String streetName;
+
+	private String city;
+
+	private String state;
+
+	private String pinCode;
+
+	private String country;
+
+}

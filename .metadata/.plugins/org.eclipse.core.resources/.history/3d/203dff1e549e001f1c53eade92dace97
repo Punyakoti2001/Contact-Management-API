@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.mapper;
+
+public class ContactMapper {
+
+}

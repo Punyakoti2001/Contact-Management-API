@@ -1,0 +1,17 @@
+package com.buildbot.contactsmanagement.mapper;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+import com.buildbot.contactsmanagement.entity.Contact;
+import com.buildbot.contactsmanagement.requestDto.ContactDto;
+
+@Mapper
+public interface ContactMapper 
+{
+	ContactMapper INSTANCE = Mappers.getMapper(ContactMapper.class);
+	
+	
+	
+	Contact mapToContact(ContactDto contactDto);
+}

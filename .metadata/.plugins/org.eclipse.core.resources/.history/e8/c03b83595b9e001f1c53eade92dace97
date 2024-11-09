@@ -1,0 +1,84 @@
+package com.buildbot.contactsmanagement.serviceimpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.buildbot.contactsmanagement.entity.Contact;
+import com.buildbot.contactsmanagement.exceptionhandling.ResourceAlreadyExistException;
+import com.buildbot.contactsmanagement.exceptionhandling.ResourceNotFoundException;
+import com.buildbot.contactsmanagement.mapper.ContactMapper;
+import com.buildbot.contactsmanagement.repository.ContactRepository;
+import com.buildbot.contactsmanagement.requestDto.ContactDto;
+import com.buildbot.contactsmanagement.responseDto.ContactResponseDto;
+import com.buildbot.contactsmanagement.service.ContactService;
+
+@Service
+public class ContactServiceImpl implements ContactService 
+{
+	@Autowired
+	private ContactRepository contactRepository;
+
+	@Override
+	public ContactResponseDto createNewResource(ContactDto contactDto) {
+		
+		Optional<Contact> existEmail = contactRepository.findByEmail(contactDto.getEmail());
+		Optional<Contact> existPhoneNo = contactRepository.findByPhoneNo(contactDto.getPhoneNo());
+		
+		if(existEmail.isPresent())
+		{
+			throw new ResourceAlreadyExistException("Email Already Exist");
+		}
+		
+		if(existPhoneNo.isPresent())
+		{
+			throw new ResourceAlreadyExistException("PhoneNo Already Exist");
+		}
+		
+		Contact contact = ContactMapper.INSTANCE.mapToContact(contactDto);
+		Contact save = contactRepository.save(contact);
+		
+		ContactResponseDto responseDto = ContactMapper.INSTANCE.mapToContactResponseDto(save);
+		System.out.println(responseDto);
+		
+		return responseDto;
+	}
+
+	@Override
+	public ContactResponseDto updateExistingResource(Long contactId, ContactDto contactDto) {
+		
+		Contact contact = contactRepository.findById(contactId).orElseThrow(()->new ResourceNotFoundException("contactId",""+contactId));
+		
+		Contact updatedContact = ContactMapper.INSTANCE.updateMapToContact(contactDto,contact);
+		
+		System.out.println(updatedContact);
+		return null;
+	}
+
+	@Override
+	public List<ContactResponseDto> fetchAllContacts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto fetchContactByPhoneNo(String phoneNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto fetchContactByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactResponseDto fetchContactByContactId(Long contactId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

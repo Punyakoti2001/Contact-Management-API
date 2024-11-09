@@ -1,0 +1,7 @@
+package com.buildbot.contactsmanagement.serviceimpl;
+
+import com.buildbot.contactsmanagement.service.ContactService;
+
+public class ContactServiceImpl implements ContactService {
+
+}

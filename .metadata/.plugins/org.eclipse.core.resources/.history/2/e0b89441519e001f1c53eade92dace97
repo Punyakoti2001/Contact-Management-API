@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.exception;
+
+public class ResourceAlreadyExistException extends Runtime {
+
+}

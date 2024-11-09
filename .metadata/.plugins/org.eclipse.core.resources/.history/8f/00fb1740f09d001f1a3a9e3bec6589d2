@@ -1,0 +1,43 @@
+package com.buildbot.contactsmanagement.controller;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.buildbot.contactsmanagement.requestDto.ContactDto;
+import com.buildbot.contactsmanagement.responseDto.ContactResponseDto;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Pattern;
+
+@RestController
+@RequestMapping("/build-bot/v1/contact")
+public class ContactController 
+{
+	
+	@PostMapping("/create-contact")
+	public ResponseEntity<ContactResponseDto> createNewContact(@RequestBody @Valid ContactDto contactDto)
+	{
+		return null;
+		
+	}
+	
+	@PutMapping("/update-contact/{contactId}")
+	public ResponseEntity<ContactResponseDto> updateContact(@Valid @Pattern(regexp = "\\d+") @PathVariable Long contactId,@RequestBody ContactDto contactDto)
+	{
+		return null;
+		
+	}
+	
+	public ResponseEntity<List<ContactResponseDto>> fetchAllContacts()
+	{
+		
+	}
+
+}

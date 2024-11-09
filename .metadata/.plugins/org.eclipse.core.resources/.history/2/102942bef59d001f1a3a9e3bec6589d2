@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.exceptionhandling;
+
+public class GlobalExceptionHandler {
+
+}

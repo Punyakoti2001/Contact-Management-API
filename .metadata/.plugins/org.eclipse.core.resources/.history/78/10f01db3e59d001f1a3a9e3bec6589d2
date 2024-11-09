@@ -1,0 +1,29 @@
+package com.buildbot.contactsmanagement.entity;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@RequiredArgsConstructor
+@ToString
+@Entity
+@Table(name = "contact",schema = "cma")
+public class Contact 
+{
+	private Integer contactId;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String phoneNo;
+	
+
+}

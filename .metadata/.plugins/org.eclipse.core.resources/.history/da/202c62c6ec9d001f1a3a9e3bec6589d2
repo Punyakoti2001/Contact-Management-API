@@ -1,0 +1,7 @@
+package com.buildbot.contactsmanagement.service;
+
+import com.buildbot.contactsmanagement.service.AddressService;
+
+public class AddressServiceImpl implements AddressService {
+
+}

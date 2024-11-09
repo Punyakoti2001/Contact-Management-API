@@ -1,0 +1,13 @@
+package com.buildbot.contactsmanagement.exceptionhandling;
+
+public class ResourceNotFoundException extends RuntimeException 
+{
+
+	public public ResourceNotFoundException(String Resource,String source) {
+		
+		super("This "+Resource+" does not Exist. "+source);
+		
+	}
+	
+
+}

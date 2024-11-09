@@ -1,0 +1,13 @@
+package com.buildbot.contactsmanagement.responseDto;
+
+@Data
+@RequiredArgsConstructor
+public class ErrorResponseDto 
+{
+	private String apiPath;
+	private HttpStatus errorCode;
+	private String errorMessage;
+	private LocalDateTime errorTime;
+	
+
+}

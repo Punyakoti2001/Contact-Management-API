@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement;
+
+public class ResponseConstants {
+
+}
