@@ -145,24 +145,43 @@ src/main/java/com/buildbot/contactsmanagement
 ** Frontend Structure (ReactJs)**
 
 contacts-management-api-ui/
+
 ├── public/
+
 │   ├── index.html
+
 │   └── ...
+
 ├── src/
+
 │   ├── components/
+
 │   │   ├── contact/
+
 │   │   │   ├── AddContact.js
+
 │   │   │   ├── DisplayContacts.js
+
 │   │   │   ├── Home.js
+
 │   │   ├── services/
+
 │   │   │   ├── ContactService.js
+
 │   │   └── ...
+
 │   ├── App.css
+
 │   ├── App.js
+
 │   ├── index.js
+
 │   └── ...
+
 ├── .gitignore
+
 ├── package.json
+
 └── README.md
 
 
