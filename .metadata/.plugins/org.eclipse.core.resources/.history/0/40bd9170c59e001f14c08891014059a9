@@ -1,0 +1,2 @@
+spring.application.name=contacts-management-api
+spring.profiles.active=dev

@@ -1,0 +1,24 @@
+package com.buildbot.contactsmanagement.requestDto;
+
+import com.buildbot.contactsmanagement.helper.UserConstants;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.Data;
+
+@Data
+public class UserDto {
+	@NotBlank
+	@Pattern(regexp = UserConstants.USERNAME_REGEX , message = UserConstants.USERNAME_MESSAGE)
+	private String username;
+	@NotBlank
+	@Pattern(regexp =UserConstants.PASSWORD_REGEX ,message = UserConstants.PASSWORD_MESSAGE)
+	private String password;
+	@NotBlank
+	@Email
+	private String email;
+	@NotBlank
+	private String firstName;
+	@NotBlank
+	private String lastName;

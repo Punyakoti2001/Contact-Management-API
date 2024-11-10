@@ -1,0 +1,35 @@
+# H2 Database Configuration
+server.port = 9091
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+
+# Hibernate (JPA) Configuration
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# H2 Console Configuration
+spring.h2.console.enabled=true
+#spring.h2.console.path=/h2-console
+
+
+# Log levels (can be TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
+logging.level.root=INFO
+logging.level.org.springframework.web=DEBUG
+logging.level.com.yourpackage=DEBUG
+
+# Log file configuration
+logging.file.name=logs/app.log  # Path to the log file
+logging.file.path=logs          # Directory where log file will be created (alternative to logging.file.name)
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+
+# Console logging pattern
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+
+# Rolling file appender configuration
+logging.file.max-size=10MB     # Max size of log file before rolling over
+logging.file.max-history=30    # Max number of backup files to retain
+logging.file.total-size-cap=100MB  # Max total size of all backup files
+

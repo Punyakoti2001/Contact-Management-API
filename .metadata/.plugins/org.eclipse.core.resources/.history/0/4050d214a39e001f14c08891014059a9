@@ -1,0 +1,39 @@
+package com.buildbot.contactsmanagement.entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Table(name = "UsersTable",uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+public class User extends BaseEntity 
+{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer userId;
+	
+	@Column(name = "first_name",unique = true)
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String password;
+	private String roles;
+	
+	
+	
+	
+
+}

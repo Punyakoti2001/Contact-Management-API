@@ -1,0 +1,6 @@
+package com.buildbot.contactsmanagement.requestDto;
+
+public class UserDto 
+{
+
+}

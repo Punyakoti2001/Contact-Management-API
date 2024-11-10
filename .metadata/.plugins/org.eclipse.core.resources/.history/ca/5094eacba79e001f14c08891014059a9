@@ -1,0 +1,30 @@
+package com.buildbot.contactsmanagement.serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.buildbot.contactsmanagement.exceptionhandling.ResourceAlreadyExistException;
+import com.buildbot.contactsmanagement.repository.UserRepository;
+import com.buildbot.contactsmanagement.requestDto.UserDto;
+import com.buildbot.contactsmanagement.service.UserService;
+
+public class UserServiceImpl implements UserService 
+{
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private PasswordEncoder encoder;
+	
+	@Override
+	public void saveUser(UserDto userDto) 
+	{
+		userRepository.findByUserName(userDto.getUsername()).orElseThrow(()->new ResourceAlreadyExistException("UserName already taken : "+userDto.getUsername()));
+		
+		
+		
+	}
+
+}
