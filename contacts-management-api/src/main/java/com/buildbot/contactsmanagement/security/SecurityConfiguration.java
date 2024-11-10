@@ -35,7 +35,7 @@ public class SecurityConfiguration {
 				.requestMatchers("/build-bot/v1/contact/**","/build-bot/v1/contact-user/new-user","/build-bot/v1/contact-user/get-token","/v2/api-docs", "/swagger-resources",
 						"/swagger-resources/**", "/configuration/ui", "/configuration/security", "/swagger-ui.html",
 						"/webjars/**", "/v3/api-docs/**", "/swagger-ui/**")
-				.permitAll().requestMatchers("/build-bot/v1/contact-a/**").authenticated())
+				.permitAll().requestMatchers("/build-bot/v1/contact/**").authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authenticationProvider(authenticationProvider())
 				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
