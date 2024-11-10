@@ -81,10 +81,59 @@ This is a simple React application for managing contacts. It allows users to add
 - axios
 - react-toastify
 
+
+
 ## Running the Application
 **Run Backend**: Follow the backend setup instructions to start the Spring Boot server.
 
+1. Clone the Repository:
+    
+        https://github.com/Punyakoti2001/Contact-Management-API.git
+
+2. Build the Project: 
+  Ensure you have Maven installed, then build the project:
+
+         mvn clean install
+
+3. Run the Application:
+
+         mvn spring-boot:run
+
+**The application will start on http://localhost:9091 (default port).**
+
+
+
 **Run Frontend**: Follow the frontend setup instructions to start the React server.
+
+These instructions will help you set up the project on your local machine. 
+### Prerequisites
+ Make sure you have Node.js and npm (Node Package Manager) installed on your machine.
+
+   - [Node.js](https://nodejs.org/) 
+   - [npm](https://www.npmjs.com/) 
+ ## Installation 
+ 1. Clone the repository to your local machine:
+
+ git clone 
+
+           https://github.com/Punyakoti2001/Contact-Management-API.git
+
+2. Navigate to the project directory:
+         
+       cd react-contact-app
+
+3. Install the dependencies:
+
+        npm install
+
+4. Running the App
+
+       npm start
+
+5. Building the App
+
+       npm run build
+
 
 **Access the Full Application**: Visit http://localhost:3000 to access the frontend, which interacts with the backend on port 9091.
 
@@ -116,33 +165,47 @@ URL: http://localhost:9091/swagger-ui.html
 ## Project Structure
 **Backend Structure (Spring Boot)**
 
-src/main/java/com/buildbot/contactsmanagement
+src/
 
-│
+├── main/
 
-├── controller            # REST Controllers
+│   ├── java/
 
-├── service               # Business Logic Interfaces
+│   │   ├── com.buildbot.contactsmanagement/
 
-├── serviceimpl           # Business LogicImplementations
+│   │   │   ├── controller/         # REST 
+controllers
 
-├── repository            # Data Access Layer
+│   │   │   ├── entity/             # Entity classes
 
-├── entity            # JPA Entities
+│   │   │   ├── exceptionhandling/  # Custom exceptions and handlers
 
-├── exceptionhandling # Custom Exceptions
+│   │   │   ├── repository/         # Repository interfaces
 
-├── requestDto        # Request DTOs
+│   │   │   ├── requestDto/         # Data transfer objects for requests
 
-├── responseDto       # Response DTOs
+│   │   │   ├── responseDto/        # Data transfer objects for responses
 
-├── mapper            # Mapper for converting between entities and DTOs
+│   │   │   ├── security/           # JWT and security configurations
 
-├── security          #security configuration using Jwt-authentication
+│   │   │   ├── service/            # Service interfaces
 
-└── ContactsManagementApplication.java # Main Spring Boot Application
+│   │   │   ├── serviceimpl/        # Service implementation classes
 
-** Frontend Structure (ReactJs)**
+│   │   │   └── ContactManagementApiApplication.java  # Main application file
+
+│   └── resources/
+
+│       ├── application.properties  # Application configuration
+
+│       ├── data.sql                # Optional initial data
+
+│       └── schema.sql              # Optional schema definition
+
+└── test/                           # Unit and integration tests
+
+
+**Frontend Structure (ReactJS)**
 
 contacts-management-api-ui/
 
@@ -185,9 +248,17 @@ contacts-management-api-ui/
 └── README.md
 
 
+
+
 ## Additional Notes
 **Database:** Default is H2 for development. Switch to MySQL in application.properties for production.
 
 **Error Handling:** Custom exceptions are used in the backend to return user-friendly error messages.
 
 **Asynchronous Processing:** @Async annotation is applied to non-blocking operations to improve response times.
+
+## Your Name - 
+ **pulicherlapunyakotireddy@gmail.com**
+
+## Project Repository -
+**https://github.com/Punyakoti2001/Contact-Management-API.git**
