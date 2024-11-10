@@ -1,0 +1,15 @@
+package com.buildbot.contactsmanagement.serviceimpl;
+
+import com.buildbot.contactsmanagement.requestDto.UserDto;
+import com.buildbot.contactsmanagement.service.UserService;
+
+public class UserServiceImpl implements UserService 
+{
+
+	@Override
+	public void saveUser(UserDto userDto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

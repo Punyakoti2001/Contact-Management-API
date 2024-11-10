@@ -1,0 +1,22 @@
+server.port=9091
+
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/db_buildbot
+spring.datasource.username=postgres
+spring.datasource.password=1234
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+management.endpoints.web.exposure.include=*
+management.endpoints.web.exposure.exclude=metrics
+
+# Log levels (can be TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
+logging.level.root=INFO
+logging.level.org.springframework.web=DEBUG
+logging.level.com.yourpackage=DEBUG
+
+# Log file configuration
+logging.file.name=logs/app.log  
+logging.file.path=logs          # Directory where log file will be created (alternative to logging.file.name)
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n

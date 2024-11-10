@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.entity;
+
+public class BaseEntity {
+
+}

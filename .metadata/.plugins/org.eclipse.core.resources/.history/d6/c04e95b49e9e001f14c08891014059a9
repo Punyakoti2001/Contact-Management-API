@@ -1,0 +1,23 @@
+package com.buildbot.contactsmanagement.service;
+
+import com.buildbot.contactsmanagement.requestDto.ContactDto;
+import com.buildbot.contactsmanagement.responseDto.ContactResponseDto;
+
+import java.util.List;
+
+public interface ContactService 
+{
+	ContactResponseDto createNewResource(ContactDto contactDto);
+	
+	ContactResponseDto updateExistingResource(Long contactId,ContactDto contactDto);
+	
+	List<ContactResponseDto> fetchAllContacts();
+	
+	ContactResponseDto fetchContactByPhoneNo(String phoneNo);
+	
+	ContactResponseDto fetchContactByEmail(String email);
+
+
+	void deleteContact(Long contactId);
+
+}

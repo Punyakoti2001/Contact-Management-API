@@ -1,0 +1,5 @@
+package com.buildbot.contactsmanagement.security;
+
+public class SecurityConfiguration {
+
+}

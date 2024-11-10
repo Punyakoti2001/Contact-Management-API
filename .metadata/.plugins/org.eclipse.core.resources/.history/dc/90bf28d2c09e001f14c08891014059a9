@@ -1,0 +1,9 @@
+package com.buildbot.contactsmanagement.service;
+
+import com.buildbot.contactsmanagement.requestDto.UserDto;
+
+public interface UserService
+{
+	void saveUser(UserDto userDto);
+
+}
